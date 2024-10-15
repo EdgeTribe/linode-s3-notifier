@@ -10,6 +10,14 @@ This Python script periodically checks for newly modified files in a Linode S3 b
 - [Error Handling](#error-handling)
 - [License](#license)
 
+## Docker Run
+
+You can run it straight from docker like:
+
+   ```bash
+   docker run --env-file=env.file edgetribe/linode-s3-notifier:latest
+   ```
+
 ## Installation
 
 1. Clone the repository or copy the script to your local environment.
