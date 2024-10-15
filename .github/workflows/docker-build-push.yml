@@ -28,16 +28,16 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }} .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/linode-s3-notifier:${{ github.sha }} .
 
       # Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/linode-s3-notifier:${{ github.sha }}
 
       # Optionally, tag and push the image as 'latest'
       - name: Tag image as latest and push
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/linode-s3-notifier:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/linode-s3-notifier:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/linode-s3-notifier:latest
