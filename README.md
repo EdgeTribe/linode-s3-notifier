@@ -3,12 +3,21 @@
 This Python script periodically checks for newly modified files in a Linode S3 bucket and sends corresponding S3 event notifications to an AWS SQS queue. It uses the Boto3 library to interact with both the S3 and SQS services and leverages multi-threading to send messages asynchronously.
 
 ## Table of Contents
+- [Docker Run](#docker-run)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [Functions](#functions)
 - [Error Handling](#error-handling)
 - [License](#license)
+
+## Docker Run
+
+You can run it straight from docker like:
+
+   ```bash
+   docker run --env-file=env.file edgetribe/linode-s3-notifier:latest
+   ```
 
 ## Installation
 
